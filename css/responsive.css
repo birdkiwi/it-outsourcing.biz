@@ -107,10 +107,6 @@
     .blog_area {
         padding-bottom: 70px;
     }
-    footer.footer_area .col-sm-6:nth-child(3),
-    footer.footer_area .col-sm-6:nth-child(4) {
-        margin-top: 50px;
-    }
     .contact_address_title {
         padding-bottom: 30px;
     }
