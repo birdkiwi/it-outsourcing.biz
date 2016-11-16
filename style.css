@@ -136,14 +136,18 @@
         outline: none;
     }
     
-    ol li,
-    ul li {
-        list-style: outside none none;
-    }
-    
     img {
         height: auto;
         max-width: 100%;
+    }
+
+    .ul-list {
+        padding-left: 20px;
+    }
+
+    .ul-list li {
+        padding-left: 10px;
+        margin-bottom: 10px;
     }
     
     .table {
@@ -1197,6 +1201,7 @@
         position: relative;
         z-index: 1;
         background-color: #3F51B5;
+        color: #fff;
     }
     
     .why_choose_text > p {
