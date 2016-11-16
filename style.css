@@ -3156,4 +3156,40 @@
         background-color: #3F51B5;
         border: 2px solid #3F51B5;
     }
+
+    /* ::::::::::::::::::::::::::
+    :: 37.0 service css
+    :::::::::::::::::::::::::: */
+
+    .service_text {
+        text-align: center;
+        margin-bottom: 25px;
+    }
+    .service_text > h2 {
+        color: #3F51B5;
+        margin-bottom: 25px;
+    }
+    .service_text > p {
+        font-size: 16px;
+    }
+
+    .service-list {
+        margin-bottom: 50px;
+    }
+    .service-list-info {
+        border: 3px outset #3F51B5;
+        border-radius: 6px;
+    }
+    .service-list-info > p {
+        padding: 12px;
+    }
+
+    /* ::::::::::::::::::::::::::
+    :: 38.0 it-autsorsing css
+    :::::::::::::::::::::::::: */
+
+    .it-autsorsing {
+        text-align: left;
+    }
+
     /* :::::::::::::::::::::::::::::::::: The End :::::::::::::::::::::::::::::::::: */
