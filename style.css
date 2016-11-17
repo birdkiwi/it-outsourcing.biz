@@ -3189,6 +3189,11 @@
     }
     .ul-prihod-admin {
         text-align: left;
+        font-size: 18px;
+        margin-bottom: 50px;
+    }
+    .prihod-admin-icon > span {
+        color: #1B3EDA!important;
     }
 
     /* :::::::::::::::::::::::::::::::::: The End :::::::::::::::::::::::::::::::::: */
