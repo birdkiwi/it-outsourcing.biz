@@ -3192,8 +3192,40 @@
         font-size: 18px;
         margin-bottom: 50px;
     }
+    .prihod-admin-icon {
+        text-align: center;
+    }
     .prihod-admin-icon > span {
         color: #1B3EDA!important;
+        text-align: center;
+    }
+
+    /* ::::::::::::::::::::::::::
+    :: 39.0 administratirovanie css
+    :::::::::::::::::::::::::: */
+
+    .ul-admin {
+        font-size: 21px;
+        padding-bottom: 30px;
+        list-style-type: square;
+    }
+    .admin-column:first-child {
+        border-right: 2px solid #0e4af6;
+    }
+    .admin-column > p {
+        text-align: left;
+    }
+    .admin-column-price {
+        border: 5px outset #1281FF
+    }
+    @media(max-width: 992px) {
+        .admin-column:first-child {
+            border:none;
+        }
+        .admin-column-price {
+            margin-bottom: 50px;
+        }
+        .
     }
 
     /* :::::::::::::::::::::::::::::::::: The End :::::::::::::::::::::::::::::::::: */
