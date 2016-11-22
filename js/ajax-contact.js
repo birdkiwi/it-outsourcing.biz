@@ -1,48 +1,46 @@
 $(function () {
 
     // Get the form.
-    var form = $('#main_contact_form');
+    var $form = $('#main_contact_form');
 
     // Get the messages div.
-    var formMessages = $('#success_fail_info');
+    var $formMessages = $('#success_fail_info');
 
     // Set up an event listener for the contact form.
-    $(form).submit(function (e) {
+    $form.submit(function (e) {
         // Stop the browser from submitting the form.
         e.preventDefault();
 
         // Serialize the form data.
-        var formData = $(form).serialize();
+        var formData = $form.serialize();
 
         // Submit the form using AJAX.
         $.ajax({
                 type: 'POST',
-                url: $(form).attr('action'),
+                url: $form.attr('action'),
                 data: formData
             })
             .done(function (response) {
                 // Make sure that the formMessages div has the 'success' class.
-                $(formMessages).removeClass('error');
-                $(formMessages).addClass('success');
+                $formMessages.removeClass('error');
+                $formMessages.addClass('success');
 
                 // Set the message text.
-                $(formMessages).text('Thanks! Message has been sent.');
+                $formMessages.text('Благодарим вас, ваше сообщение было успешно отправлено!');
 
                 // Clear the form.
-                $('#name').val('');
-                $('#email').val('');
-                $('#message').val('');
+                $form[0].reset();
             })
             .fail(function (data) {
                 // Make sure that the formMessages div has the 'error' class.
-                $(formMessages).removeClass('success');
-                $(formMessages).addClass('error');
+                $formMessages.removeClass('success');
+                $formMessages.addClass('error');
 
                 // Set the message text.
                 if (data.responseText !== '') {
-                    $(formMessages).text(data.responseText);
+                    $formMessages.text(data.responseText);
                 } else {
-                    $(formMessages).text('Oops! An error occured.');
+                    $formMessages.text('Ой! Кажется что-то пошло не так. Пожалуйста, попробуйте еще раз отравить сообщение, либо свяжитесь с нами по телефону.');
                 }
             });
 
