@@ -2432,24 +2432,6 @@
         text-align: left;
     }
     
-    .register_form .form-group > input,
-    .login_manual_form .form-group > input {
-        -moz-border-bottom-colors: none;
-        -moz-border-left-colors: none;
-        -moz-border-right-colors: none;
-        -moz-border-top-colors: none;
-        border-color: -moz-use-text-color -moz-use-text-color #ddd;
-        -o-border-image: none;
-        border-image: none;
-        border-style: none none solid;
-        border-width: medium medium 2px;
-        display: block;
-        padding: 10px;
-        -webkit-transition-duration: 500ms;
-        transition-duration: 500ms;
-        width: 100%;
-    }
-    
     .register_form .form-group > input:focus,
     .login_manual_form .form-group > input:focus {
         border-bottom: 2px solid #3F51B5;
@@ -2863,7 +2845,7 @@
     
     .coupon > p {
         color: #888;
-        letter-spacing: 0.5;
+        letter-spacing: 0.5px;
     }
     
     .coupon > input {
