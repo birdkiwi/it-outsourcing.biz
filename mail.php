@@ -1,5 +1,5 @@
 <?php
-    
+    header('Content-Type: text/html; charset=utf-8');
     // Only process POST reqeusts.
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
@@ -21,7 +21,8 @@
 
         // Set the recipient email address.
         // FIXME: Update this to your desired email address.
-        $recipient = "info@metadesk.ru";
+        //$recipient = "info@metadesk.ru";
+        $recipient = "alexey-bolonia@yandex.ru";
 
         // Set the email subject.
         $email_subject = "Новое сообщение с сайта it-outsourcing от $name";
