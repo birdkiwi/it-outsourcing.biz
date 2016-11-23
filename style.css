@@ -3536,3 +3536,30 @@ body.modal-open {
 .form-block-calc {
     margin-bottom: 15px;
 }
+#it-solution {
+    height: 0;
+    position: static;
+}
+#it-solution th {
+    color: #999;
+}
+#it-solution ul {
+    list-style: url(img/icons/li-marker.png);
+}
+#it-solution td:nth-child(2) {
+    width: 120px;
+}
+#it-solution img {
+    padding-right: 12px;
+}
+#it-solution input[type=button] {
+    background-color: #3f51b5;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    text-transform: capitalize;
+}
+#it-solution input[type=button]:hover {
+    background-color: #FFC107;
+    color: #3F51B5;
+}

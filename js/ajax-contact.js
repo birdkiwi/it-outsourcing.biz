@@ -21,6 +21,7 @@ $(function () {
                 data: formData
             })
             .done(function (response) {
+                alert("Спасибо за Вашу заявку, в скором времени наши менеджеры свяжутся с Вами!");
                 // Make sure that the formMessages div has the 'success' class.
                 $formMessages.removeClass('error');
                 $formMessages.addClass('success');
@@ -33,15 +34,11 @@ $(function () {
             })
             .fail(function (data) {
                 // Make sure that the formMessages div has the 'error' class.
+                console.log($form[0]);
+                alert("Ой! Кажется что-то пошло не так. Пожалуйста, попробуйте еще раз отравить сообщение, либо свяжитесь с нами по телефону.");
                 $formMessages.removeClass('success');
                 $formMessages.addClass('error');
-
-                // Set the message text.
-                if (data.responseText !== '') {
-                    $formMessages.text(data.responseText);
-                } else {
-                    $formMessages.text('Ой! Кажется что-то пошло не так. Пожалуйста, попробуйте еще раз отравить сообщение, либо свяжитесь с нами по телефону.');
-                }
+                $formMessages.text('Попробуйте еще раз отправить сообщение, либо свяжитесь с нами по телефону.');
             });
 
     });
