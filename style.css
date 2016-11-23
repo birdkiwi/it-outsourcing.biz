@@ -3437,6 +3437,7 @@ body.modal-open {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     padding:37px;
     flex: 1 0 20%;
 }

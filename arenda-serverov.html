@@ -91,6 +91,185 @@
     </div>
 </section>
 
+<section class="calc section_padding_100" id="calc">
+    <div class="container">
+        <h2 class="section-title">Рассчитайте стоимость аренды сервера!</h2>
+        <p class="section-title-desc">Вышлем предложение с ценами в течение 60 минут.</p>
+        <form action="mail.php" method="post" class="calc-form form form-var-1">
+            <input type="hidden" name="message">
+            <div class="calc-form-row">
+                <div class="calc-form-body">
+                    <div class="calc-block">
+                        <div class="title"><b>Процессор</b><br><span>Количество ядер</span></div>
+                        <div class="calc-slider">
+                            <div class="range-slider_asvdc" data-min="1" data-max="4" data-value="2" data-values="1,2,4,8"></div>
+                            <div class="calc-slider-info clearfix">
+                                <span style="left:0">1</span>
+                                <span style="left:33.333%;">2</span>
+                                <span style="left:66.666%">4</span>
+                                <span style="left:100%">8</span>
+                            </div>
+                        </div>
+                        <div class="calc-input-wrapp">
+                            <input type="text" class="calc-input-asvdc" disabled value="4" id="input-cpu">
+                        </div>
+                    </div>
+                    <div class="calc-block">
+                        <div class="title"><b>Оперативная память</b><br><span>Гигабайты</span></div>
+                        <div class="calc-slider">
+                            <div class="range-slider_asvdc" data-min="1" data-max="7" data-value="3" data-values="2,4,8,12,16,24,32"></div>
+                            <div class="calc-slider-info clearfix">
+                                <span style="left:0">2</span>
+                                <span style="left:16.666%;">4</span>
+                                <span style="left:33.333%;">8</span>
+                                <span style="left:49.999%;">12</span>
+                                <span style="left:66.666%">16</span>
+                                <span style="left:83.333%">24</span>
+                                <span style="left:100%">32</span>
+                            </div>
+                        </div>
+                        <div class="calc-input-wrapp">
+                            <input type="text" class="calc-input-asvdc" disabled value="8" id="input-ram">
+                        </div>
+                    </div>
+                    <div class="calc-block">
+                        <div class="title"><b>Жесткий диск</b><br><span>Гигабайты</span></div>
+                        <div class="calc-slider">
+                            <div class="range-slider_asvdc" data-min="1" data-max="4" data-value="2" data-values="250,500,750,1000"></div>
+                            <div class="calc-slider-info clearfix">
+                                <span style="left:0">250</span>
+                                <span style="left:33.333%;">500</span>
+                                <span style="left:66.666%">750</span>
+                                <span style="left:100%">1000</span>
+                            </div>
+                        </div>
+                        <div class="calc-input-wrapp">
+                            <input type="text" class="calc-input-asvdc" disabled value="500" id="input-hdd">
+                        </div>
+                    </div>
+                    <!--div class="calc-block">
+                        <div class="title"><b>Операционная система</b></div>
+                        <div class="calc-slider">
+                            <div class="range-slider_asvdc" data-min="1" data-max="3" data-value="1" data-values="Linux,FreeBSD,Windows"></div>
+                            <div class="calc-slider-info clearfix">
+                                <span style="left:0">Linux</span>
+                                <span style="left:50%">FreeBSD</span>
+                                <span style="left:100%">Windows</span>
+                            </div>
+                        </div>
+                        <div class="calc-input-wrapp">
+                            <input type="text" class="calc-input-asvdc" disabled value="Linux" id="input-os"">
+                        </div>
+                    </div-->
+                    <div class="calc-block">
+                        <div class="title"><b>Майкрософт Офис</b><br><span>Пользователи</span></div>
+                        <div class="calc-slider">
+                            <div class="range-slider_asvdc" data-min="0" data-max="30" data-value="0"></div>
+                            <div class="calc-slider-info clearfix">
+                                <span style="left:0">0</span>
+                                <span style="left:16.666%;">5</span>
+                                <span style="left:33.333%;">10</span>
+                                <span style="left:49.999%;">15</span>
+                                <span style="left:66.666%">20</span>
+                                <span style="left:83.333%">25</span>
+                                <span style="left:100%">30</span>
+                            </div>
+                        </div>
+                        <div class="calc-input-wrapp">
+                            <input type="text" class="calc-input-asvdc" disabled value="0" id="input-mo">
+                        </div>
+                    </div>
+                    <div class="calc-block">
+                        <div class="title"><b>1C: Бухгалтерия</b><br><span>Пользователи</span></div>
+                        <div class="calc-slider">
+                            <div class="range-slider_asvdc" data-min="0" data-max="30" data-value="0"></div>
+                            <div class="calc-slider-info clearfix">
+                                <span style="left:0">0</span>
+                                <span style="left:16.666%;">5</span>
+                                <span style="left:33.333%;">10</span>
+                                <span style="left:49.999%;">15</span>
+                                <span style="left:66.666%">20</span>
+                                <span style="left:83.333%">25</span>
+                                <span style="left:100%">30</span>
+                            </div>
+                        </div>
+                        <div class="calc-input-wrapp">
+                            <input type="text" class="calc-input-asvdc" disabled value="0" id="input-1c">
+                        </div>
+                    </div>
+                    <!--div class="calc-block">
+                        <div class="title"><b>Kaspersky Anti-Virus</b></div>
+                        <div class="calc-slider">
+                            <div class="range-slider_asvdc" data-min="1" data-max="2" data-value="1" data-values="Нет,Да"></div>
+                            <div class="calc-slider-info clearfix">
+                                <span style="left:0">Нет</span>
+                                <span style="left:100%">Да</span>
+                            </div>
+                        </div>
+                        <div class="calc-input-wrapp">
+                            <input type="text" class="calc-input-asvdc" disabled value="Нет" id="input-kav">
+                        </div>
+                    </div>
+                    <div class="calc-block">
+                        <div class="title"><b>Microsoft SQL Server Standard</b><br><span>Количество ядер</span></div>
+                        <div class="calc-slider">
+                            <div class="range-slider_asvdc" data-min="1" data-max="5" data-value="3" data-values="1,2,4,6,8"></div>
+                            <div class="calc-slider-info clearfix">
+                                <span style="left:0">1</span>
+                                <span style="left:25%;">2</span>
+                                <span style="left:50%">4</span>
+                                <span style="left:75%">6</span>
+                                <span style="left:100%">8</span>
+                            </div>
+                        </div>
+                        <div class="calc-input-wrapp">
+                            <input type="text" class="calc-input-asvdc" disabled value="4" id="input-sql">
+                        </div>
+                    </div>
+                    <hr><br>
+                    <div class="calc-block">
+                        <div class="title"><b>Техническая поддержка</b><br><span>Часов/<br>дней в неделю</span></div>
+                        <div class="calc-slider">
+                            <div class="range-slider_asvdc" data-min="1" data-max="3" data-value="1" data-values="0,8/5,24/7"></div>
+                            <div class="calc-slider-info clearfix">
+                                <span style="left:0">0</span>
+                                <span style="left:50%">8/5</span>
+                                <span style="left:100%;">24/7</span>
+                            </div>
+                        </div>
+                        <div class="calc-input-wrapp">
+                            <input type="text" class="calc-input-asvdc" disabled value="0" id="input-ts">
+                        </div>
+                    </div-->
+                </div>
+                <div class="calc-form-result">
+                    <div class="result var-1"><span id="result_asvdc">0</span> руб.</div>
+                    <!--div class="result-title result var-2">Отправить предложение по почте</div-->
+                    <div class="form-calc-inputs">
+                        <div class="form-block form-block-calc var-2" data-next="name">
+                            <label>Введите ваше имя</label>
+                            <input type="text" name="name" class="input input-calc valid valid-var-2" placeholder="Ваше имя">
+                        </div>
+                        <div class="form-block form-block-calc active" data-next="email">
+                            <label>Введите корректный email</label>
+                            <input type="email" name="email" class="input input-calc valid valid-var-2 email-valid" placeholder="Адрес электронной почты">
+                        </div>
+                        <div class="form-block form-block-calc var-2" data-next="tel">
+                            <label>Введите корректный телефон</label>
+                            <input type="tel" name="number" class="input input-calc valid valid-var-2" placeholder="Контактный телефон">
+                        </div>
+                        <br/>
+                        <button type="submit" class="submit  services-btn" formnovalidate><span>Выслать предложение на email</span></button>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+    <br><br><br>
+</section>
+
 <!-- ::::::::::::::::::: Footer Area Start ::::::::::::::::::: -->
 <footer class="footer_area">
     <div class="container">
@@ -203,9 +382,8 @@
 <script src="js/jquery.easing.1.3.js"></script>
 <script src="js/jquery.scrollUp.js"></script>
 <script src="js/wow.min.js"></script>
+<script src="js/jquery.ui.js"></script>
 <script src="js/active.js"></script>
-<script src="js/nouislider.js"></script>
-<script src="js/range-slider.js"></script>
 
 <?php include('counters.php'); ?>
 

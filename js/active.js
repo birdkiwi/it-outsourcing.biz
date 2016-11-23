@@ -14,7 +14,6 @@
     // 11.0 countdown clock active code
     // 12.0 Preloader active code
 
-    
     // 1.0 Full Screen Code
 
     $(window).on('resizeEnd', function () {
@@ -52,14 +51,14 @@
         $('.owl-item .single_slide .slide_text h3').removeClass('animated').hide();
         $('.owl-item .single_slide .slide_text .btn.btn-1').removeClass('animated').hide();
         $('.owl-item .single_slide .slide_text .welcome_slide_thumb').removeClass('animated').hide();
-    })
+    });
 
     owl.on('translated.owl.carousel', function (event) {
         $('.owl-item.active .single_slide .slide_text h2').addClass('animated custom_slideInUp').show();
         $('.owl-item.active .single_slide .slide_text h3').addClass('animated custom_slideInUp_2').show();
         $('.owl-item.active .single_slide .slide_text .btn.btn-1').addClass('animated custom_slideInUp_btn_1').show();
         $('.owl-item.active .single_slide .slide_text .welcome_slide_thumb').addClass('animated custom_slideInUp_btn_2').show();
-    })
+    });
         
     // 3.0 testimonials active code
 
@@ -193,14 +192,14 @@
         });
     });
 
-    /* calc */
+    /* Calculation Forms */
 
-// if($('.calc-form').hasClass('form-var-1')){
-    // $('.valid-var-2').removeClass('valid');
-// }
-// if($('.calc-form').hasClass('form-var-2')){
-    // $('.valid-var-2').addClass('valid');
-// }
+    // if($('.calc-form').hasClass('form-var-1')){
+        // $('.valid-var-2').removeClass('valid');
+    // }
+    // if($('.calc-form').hasClass('form-var-2')){
+        // $('.valid-var-2').addClass('valid');
+    // }
 
     $('.range-slider').each(function(){
         var t = $(this),
@@ -224,7 +223,7 @@
                 calc();
             }
         })
-    })
+    });
 
     function delchar(inp){
         var value = inp.val();
@@ -269,9 +268,9 @@
         blur: function(){
             blurInp($(this));
         }
-    })
+    });
 
-// var sum = 0;
+    // var sum = 0;
 
     var isFirstCalc = true;
 
@@ -317,6 +316,99 @@
 
     calc();
 
+    $('.range-slider_asvdc').each(function(){
+        var t = $(this),
+            min = t.data('min'),
+            max = t.data('max'),
+            value = t.data('value'),
+            input = t.closest('.calc-block').find('.calc-input-asvdc');
+        t.slider({
+            min: min,
+            max: max,
+            range: 'min',
+            value: value,
+            slide:function( event,ui ) {
+                var t = $(this);
+                var values = t.data('values');
+                if(values) values = values.split(',');
+                var v = Number(ui.value);
+                if(values){
+                    input.val(values[--v]);
+                }else{
+                    input.val(ui.value);
+                }
+                calcasvdc();
+            }
+        })
+    });
+
+    function calcasvdc(){
+        if(!$('#input-cpu').length) return;
+        var cpu = $('#input-cpu').val(),
+            ram = $('#input-ram').val(),
+            hdd = $('#input-hdd').val(),
+            //os = $('#input-os').val(),
+            mo = $('#input-mo').val(),
+            c = $('#input-1c').val(),
+            //kav = $('#input-kav').val(),
+            //sql = $('#input-sql').val(),
+            //ts = $('#input-ts').val(),
+            cpuCost = 1000,
+            ramCost = 300,
+            hddCost = 100,
+            //osCost = 0,
+            moCost = 400,
+            cFix = 500,
+            cCost = 200,
+            //kavCost = 0,
+            //sqlCost = 5750/2,
+            //tsCost = 0,
+            sum = 0;
+
+        cpuCost *= +cpu;
+        ramCost *= +ram;
+        hddCost *= +hdd/100;
+        /* if(os === 'Windows'){
+         osCost = 500;
+         } */
+        moCost *= +mo;
+        cCost = (+c * cCost) + cFix;
+        /* if(kav === 'Р”Р°'){
+         kavCost = 600;
+         }
+         sqlCost *= +sql;
+         if(ts !== '0'){
+         if(ts === '8/5'){
+         if(os === 'Windows'){
+         tsCost = 4000;
+         }else{
+         tsCost = 6000;
+         }
+         }
+         if(ts === '24/7'){
+         if(os === 'Windows'){
+         tsCost = 7000;
+         }else{
+         tsCost = 10000;
+         }
+         }
+         } */
+        sum = cpuCost + ramCost + hddCost + moCost + cCost;
+        var str = 'Процессор: ' + cpu + '; ';
+        str += 'Память: ' + ram + '; ';
+        str += 'Гигабайт: ' + hdd + '; ';
+        //str += 'Операционная система: ' + os + '; '
+        str += 'Офис‚ Microsoft Office: ' + mo + '; ';
+        str += '1C: Бухгалтерия: ' + c + '; ';
+        //str += 'Kaspersky Anti-Virus: ' + kav + ';';
+        //str += 'Microsoft SQL Server Standard: ' + sql + '; ';
+        //str += 'Техническая поддержка: ' + ts + '; ';
+        str += 'Итого: ' + strRep(sum) + ';';
+        $('[name="message"]').val(str);
+        $('#result_asvdc').text(strRep(sum))
+    }
+
+    calcasvdc();
 
 })(jQuery);
 
