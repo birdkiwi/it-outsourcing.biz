@@ -3,10 +3,11 @@ require 'vendor/autoload.php';
 require 'config.php';
 
 header('Content-Type: text/html; charset=utf-8');
+header('Content-Type: application/json');
 
 function sendEmail($data) {
     $mail = new PHPMailer;
-    $mail->SMTPDebug = 3;
+    //$mail->SMTPDebug = 3;
     $mail->isSMTP();
     $mail->CharSet = EMAIL_CHARSET;
     $mail->Host = EMAIL_SENDER_SMTP_HOST;
@@ -65,5 +66,4 @@ else {
     $response['message'] = "Вы не заполнили все поля!";
 }
 
-header('Content-Type: application/json');
 echo json_encode($response);

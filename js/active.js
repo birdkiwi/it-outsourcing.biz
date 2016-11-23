@@ -12,7 +12,6 @@
     // 9.0 wow active code
     // 10.0 counterup active code
     // 11.0 countdown clock active code
-    // 12.0 Preloader active code
 
     // 1.0 Full Screen Code
 
@@ -182,15 +181,6 @@
             var $this = $(this).html(event.strftime('' + '<span>%w</span> weeks ' + '<span>%d</span> days ' + '<span>%H</span> hr ' + '<span>%M</span> min ' + '<span>%S</span> sec'));
         });
     }
-
-    // 13.0 Preloader active code
-
-    $(window).load(function () {
-        $('body').css('overflow-y', 'visible');
-        $('#preloader').fadeOut('slow', function () {
-            $(this).remove();
-        });
-    });
 
     /* Calculation Forms */
 
