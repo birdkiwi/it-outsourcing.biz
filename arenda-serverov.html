@@ -388,20 +388,17 @@
                     <!--div class="result-title result var-2">Отправить предложение по почте</div-->
                     <div class="form-calc-inputs">
                         <div class="form-block form-block-calc var-2" data-next="name">
-                            <label>Введите ваше имя</label>
-                            <input type="text" name="name" class="input input-calc valid valid-var-2" placeholder="Ваше имя">
+                            <input type="text" name="name" class="input input-calc valid valid-var-2" placeholder="Ваше имя" required>
                         </div>
                         <div class="form-block form-block-calc active" data-next="email">
-                            <label>Введите корректный email</label>
-                            <input type="email" name="email" class="input input-calc valid valid-var-2 email-valid" placeholder="Адрес электронной почты">
+                            <input type="email" name="email" class="input input-calc valid valid-var-2 email-valid" placeholder="Адрес электронной почты" required>
                         </div>
                         <div class="form-block form-block-calc var-2" data-next="tel">
-                            <label>Введите корректный телефон</label>
-                            <input type="tel" name="number" class="input input-calc valid valid-var-2" placeholder="Контактный телефон">
+                            <input type="tel" name="number" class="input input-calc valid valid-var-2" placeholder="Контактный телефон" required>
                         </div>
                         <input type="hidden" name="subject" value="Рассчет стоимости обслуживания">
                         <br/>
-                        <button type="submit" class="submit  services-btn" formnovalidate><span>Выслать предложение на email</span></button>
+                        <button type="submit" class="submit  services-btn"><span>Выслать предложение на email</span></button>
                     </div>
                 </div>
 
@@ -531,6 +528,7 @@
 <script src="js/wow.min.js"></script>
 <script src="js/jquery.ui.js"></script>
 <script src="js/active.js"></script>
+<script src="js/calculator.js"></script>
 
 <?php include('counters.php'); ?>
 

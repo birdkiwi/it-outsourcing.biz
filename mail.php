@@ -43,6 +43,7 @@ if ( !empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['subject
     $name = strip_tags($_POST['name']);
     $email = strip_tags($_POST['email']);
     $subject = strip_tags($_POST['subject']);
+    $message = strip_tags($_POST['message']);
     $number = strip_tags($_POST['number']);
     $ip = filter_var($_SERVER['REMOTE_ADDR'], FILTER_VALIDATE_IP);
     $message_date = date("Y-m-d H:i:s");
@@ -50,8 +51,8 @@ if ( !empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['subject
     $email_result = sendEmail(array(
         'to' => EMAIL_RECEPIENT,
         'subject' => $subject,
-        'body' => "Здравствуйте. Вам было отправлено сообщение с сайта palladium.travel с помощью обратной связи. Оно содержит следующие данные: <br> Имя: $name <br> Контакты: $contact <br> Вопрос: $question <br> IP: $ip <br> Время отправки: $message_date",
-        'altBody' => "Здравствуйте. Вам было отправлено сообщение с сайта palladium.travel с помощью обратной связи. Оно содержит следующие данные: Имя: $name Контакты: $contact Вопрос: $question IP: $ip Время отправки: $message_date"
+        'body' => "Здравствуйте. Вам было отправлено сообщение с сайта. Оно содержит следующие данные: <br> Имя: $name <br> Контакты: $number, $email <br> Тема: $subject <br> Сообщение: $message <br> IP: $ip <br> Время отправки: $message_date",
+        'altBody' => "Здравствуйте. Вам было отправлено сообщение с сайта. Оно содержит следующие данные: Имя: $name Контакты: $number, $email Тема: $subject Сообщение: $message IP: $ip Время отправки: $message_date"
     ));
 
     if($email_result) {

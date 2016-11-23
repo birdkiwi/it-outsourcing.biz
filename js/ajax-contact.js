@@ -23,7 +23,6 @@ $(function () {
                 cache: false
             })
             .done(function (response) {
-                console.log(response);
                 if(response) {
                     if(!response.error && response.message) {
                         $formMessages.removeClass('error');
@@ -34,6 +33,8 @@ $(function () {
                         alert(response.message);
                         // Clear the form.
                         $form[0].reset();
+                    } else {
+                        alert(response.error);
                     }
                 }
                 else {
