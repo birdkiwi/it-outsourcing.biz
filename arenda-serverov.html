@@ -242,6 +242,7 @@
                         </div>
                         <div class="modal-body edit-content">
                             <form action="mail.php" method="post" class="main_contact_form">
+                                <div class="main_contact_form_message"></div>
                                 <div class="form-calc-inputs">
                                     <div class="form-block form-block-calc var-2" data-next="name">
                                         <input type="text" name="name" class="input input-calc valid valid-var-2" placeholder="Ваше имя" required>
@@ -250,14 +251,11 @@
                                         <input type="email" name="email" class="input input-calc valid valid-var-2 email-valid" placeholder="Адрес электронной почты" required>
                                     </div>
                                     <div class="form-block form-block-calc var-2" data-next="tel">
-                                        <input type="tel" name="number" class="input input-calc valid valid-var-2" placeholder="Контактный телефон" required>
+                                        <input type="text" name="number" class="input input-calc valid valid-var-2" placeholder="Контактный телефон" required>
                                     </div>
-                                    <div class="form-block form-block-calc var-2" data-next="tel">
-                                        <input type="text" name="message" class="input input-calc valid valid-var-2" placeholder="" required>
-                                    </div>
+                                    <input type="hidden" name="message" required>
                                     <input type="hidden" name="subject">
-                                    <br/>
-                                    <button type="submit" class="submit  services-btn"><span>Выслать предложение на email</span></button>
+                                    <button type="submit" class="submit services-btn"><span>Выслать предложение на email</span></button>
                                 </div>
                             </form>
                         </div>
@@ -446,7 +444,7 @@
                 </div>
 
                 <div class="col-xs-12">
-                    <div id="success_fail_info"></div>
+                   <div class="main_contact_form_message"></div>
                 </div>
 
             </div>

@@ -109,7 +109,7 @@ $(document).ready(function () {
         sum += depRange * 3000 - depRangeMin * 2000;
 
         $('#result').text(strRep(sum));
-        $('[name="message"]').val('\nКомпьютеры: ' + computer + ';\nСерверы: ' + server + ';\nОргтехника: ' + equipment + ';\nТелефоны: ' + tel + ';\nВыездов в месяц: ' + departure.val() + ';\nИтого: ' + sum);
+        $('.calc-form [name="message"]').val('\nКомпьютеры: ' + computer + ';\nСерверы: ' + server + ';\nОргтехника: ' + equipment + ';\nТелефоны: ' + tel + ';\nВыездов в месяц: ' + departure.val() + ';\nИтого: ' + sum);
     }
 
     calc();
@@ -202,7 +202,7 @@ $(document).ready(function () {
         //str += 'Microsoft SQL Server Standard: ' + sql + '; ';
         //str += 'Техническая поддержка: ' + ts + '; ';
         str += 'Итого: ' + strRep(sum) + ';';
-        $('[name="message"]').val(str);
+        $('.calc-form [name="message"]').val(str);
         $('#result_asvdc').text(strRep(sum))
     }
 

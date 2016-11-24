@@ -48,8 +48,6 @@ if ( !empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['subject
     $ip = filter_var($_SERVER['REMOTE_ADDR'], FILTER_VALIDATE_IP);
     $message_date = date("Y-m-d H:i:s");
 
-    var_dump($service);
-
     $email_result = sendEmail(array(
         'to' => EMAIL_RECEPIENT,
         'subject' => $subject,
@@ -57,15 +55,13 @@ if ( !empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['subject
         'altBody' => "Здравствуйте. Вам было отправлено сообщение с сайта. Оно содержит следующие данные: Имя: $name Контакты: $number, $email Тема: $subject Сообщение: $message IP: $ip Время отправки: $message_date"
     ));
 
-    if($email_result) {
+    if ($email_result) {
         $response['error'] = false;
         $response['message'] = "Спасибо Вам за ваше обращение";
-    }
-    else {
+    } else {
         $response['message'] = "Произошла ошибка, попробуйте еще раз или перезвоните нам по телефону";
     }
-}
-else {
+} else {
     $response['message'] = "Вы не заполнили все поля!";
 }
 
