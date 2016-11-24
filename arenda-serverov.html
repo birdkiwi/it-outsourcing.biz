@@ -112,7 +112,9 @@
                     </td>
                     <td>
                             <p><strong>1000 рублей</strong></p>
-                            <p><input type="button" value="Заказать" class="btn btn-default"></p>
+                            <p><input type="button" name="cost" value="Заказать" data-toggle="modal" data-target="#myModal" data-cost="1000" data-service="Файловый сервер" data-subject="Заказать файловый сервер" class="btn btn-default delivery"></p>
+
+
                     </td>
                 </tr>
                 <tr>
@@ -127,7 +129,7 @@
                     </td>
                     <td>
                         <p><strong>1000 рублей</strong></p>
-                        <p><input type="button" value="Заказать" class="btn btn-default"></p>
+                        <p><input type="button" name="cost" value="Заказать" data-toggle="modal" data-target="#myModal" data-cost="1000" data-service="Сервер Интернет-Шлюз" data-subject="Заказать сервер интернет-шлюз" class="btn btn-default delivery"></p>
                     </td>
                 </tr>
                 <tr>
@@ -143,7 +145,7 @@
                     </td>
                     <td>
                         <p><strong>1000 рублей</strong></p>
-                        <p><input type="button" value="Заказать" class="btn btn-default"></p>
+                        <p><input type="button" name="cost" value="Заказать" data-toggle="modal" data-target="#myModal" data-cost="1000" data-service="Почтовый сервер" data-subject="Заказать почтовый сервер" class="btn btn-default delivery"></p>
                     </td>
                 </tr>
                 <tr>
@@ -157,7 +159,7 @@
                     </td>
                     <td>
                         <p><strong>1000 рублей</strong></p>
-                        <p><input type="button" value="Заказать" class="btn btn-default"></p>
+                        <p><input type="button" name="cost" value="Заказать" data-toggle="modal" data-target="#myModal" data-cost="1000" data-service="VPN" data-subject="Заказать VPN" class="btn btn-default delivery"></p>
                     </td>
                 </tr>
                 <tr>
@@ -177,7 +179,7 @@
                     </td>
                     <td>
                         <p><strong>1000 рублей</strong></p>
-                        <p><input type="button" value="Заказать" class="btn btn-default"></p>
+                        <p><input type="button" name="cost" value="Заказать" data-toggle="modal" data-target="#myModal" data-cost="1000" data-service="Терминальный сервер" data-subject=" Заказать терминальный сервер" class="btn btn-default delivery"></p>
                     </td>
                 </tr>
                 <tr>
@@ -202,7 +204,7 @@
                     </td>
                     <td>
                         <p><strong>1000 рублей</strong></p>
-                        <p><input type="button" value="Заказать" class="btn btn-default"></p>
+                        <p><input type="button" name="cost" value="Заказать" data-toggle="modal" data-target="#myModal" data-cost="1000" data-service="Внедрение доменной сетевой структуры" data-subject=" Заказать внедрение доменной сетевой структуры" class="btn btn-default delivery"></p>
                     </td>
                 </tr>
                 <tr>
@@ -223,10 +225,51 @@
                     </td>
                     <td>
                         <p><strong>1000 рублей</strong></p>
-                        <p><input type="button" value="Заказать" class="btn btn-default"></p>
+                        <p><input type="button" name="cost" value="Заказать" data-toggle="modal" data-target="#myModal" data-cost="1000" data-service="IP телефония" data-subject="Заказать IP телефонию" class="btn btn-default delivery"></p>
                     </td>
                 </tr>
             </table>
+
+            <!-- Modal -->
+            <div id="myModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title"></h4>
+                        </div>
+                        <div class="modal-body edit-content">
+                            <form action="mail.php" method="post" class="main_contact_form">
+                                <div class="form-calc-inputs">
+                                    <div class="form-block form-block-calc var-2" data-next="name">
+                                        <input type="text" name="name" class="input input-calc valid valid-var-2" placeholder="Ваше имя" required>
+                                    </div>
+                                    <div class="form-block form-block-calc active" data-next="email">
+                                        <input type="email" name="email" class="input input-calc valid valid-var-2 email-valid" placeholder="Адрес электронной почты" required>
+                                    </div>
+                                    <div class="form-block form-block-calc var-2" data-next="tel">
+                                        <input type="tel" name="number" class="input input-calc valid valid-var-2" placeholder="Контактный телефон" required>
+                                    </div>
+                                    <div class="form-block form-block-calc var-2" data-next="tel">
+                                        <input type="text" name="message" class="input input-calc valid valid-var-2" placeholder="" required>
+                                    </div>
+                                    <input type="hidden" name="subject">
+                                    <br/>
+                                    <button type="submit" class="submit  services-btn"><span>Выслать предложение на email</span></button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+                        </div>
+                    </div>
+                    <!-- Modal content end -->
+                </div>
+            </div>
+            <!-- Modal end -->
+
         </div>
 
     </div>
@@ -236,7 +279,7 @@
     <div class="container">
         <h2 class="section-title">Рассчитайте стоимость аренды сервера!</h2>
         <p class="section-title-desc">Вышлем предложение с ценами в течение 60 минут.</p>
-        <form action="mail.php" method="post" id="main_contact_form" class="calc-form form form-var-1">
+        <form action="mail.php" method="post" class="main_contact_form calc-form form form-var-1">
             <input type="hidden" name="message">
             <div class="calc-form-row">
                 <div class="calc-form-body">

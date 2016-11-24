@@ -33,7 +33,7 @@ function sendEmail($data) {
 
 $response = array(
     "error" => true,
-    "message" => null
+    "message" => null,
 );
 
 if (!empty($_POST['login'])) {
@@ -47,6 +47,8 @@ if ( !empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['subject
     $number = strip_tags($_POST['number']);
     $ip = filter_var($_SERVER['REMOTE_ADDR'], FILTER_VALIDATE_IP);
     $message_date = date("Y-m-d H:i:s");
+
+    var_dump($service);
 
     $email_result = sendEmail(array(
         'to' => EMAIL_RECEPIENT,
